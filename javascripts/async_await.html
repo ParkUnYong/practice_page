@@ -1,0 +1,43 @@
+<script>
+    function timer(time){
+        return new Promise(function(resolove){
+            setTimeout(function(){
+                resolove(time);
+            },time);
+        })
+    }
+
+    console.log('start')
+    
+    /*
+    timer(1000).then(function(time){
+        console.log('time: '+time);
+        return timer(time+1000);
+    }).then(function(time){
+        console.log('time: ' + time);
+        return timer(time+1000);
+    }).then(function(time){
+        console.log('time:'+ time);
+        console.log('end');
+    });
+    */
+async function run(){
+    let time = await timer(1000);
+    console.log('time: '+time)
+    time = await timer(time+1000);
+    console.log('time: '+time)
+    time = await timer(time+1000);
+    console.log('time: '+time);
+    console.log('end');
+}
+
+async function run2(){
+    console.log('parrent start')
+    await run();
+    console.log('parrent end')
+}
+
+run2();
+
+
+</script>

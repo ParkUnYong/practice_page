@@ -1,0 +1,1340 @@
+2. 수업의 목적
+자바 스크립트는 사용자와 상호작용 하는것을 하는 언어
+웹브라우저는 한번 화면에 출력되면 자신을 바꿀 수 없다.
+하지만 JS코드를 이용하면 상호작용하게 됨.
+JS는 html을 제어하는 언어이다.
+
+3.html과 js의 만남 : script 태그
+기본적으로 JS는 html위에서 동작하는 언어 
+때문에 어떻게하면 html이란 컴터언어에 
+완전히 다른 문법을 가지고 있는 JS 문법을 낑겨 넣을것인가
+둘을 랑데뷰 시킬것인가에 대한 이야기를 해볼것.
+
+=============================================================================
+
+3. html과 js의 만남 : scripts 태그 
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <script>
+            document.write('hello world');
+        </script>
+    </body>
+</html>
+
+<script> 태그안의 내용은 자바스크립트로 해석.
+
+자 그럼 이것이 
+<h1>JSP</h1>
+hello world 
+
+라고 쓴것과 무슨 차이인가 하면 
+
+<h1>JSP</h1>
+1+1은 영원히 1+1이지만  JS는
+
+
+        <script>
+            document.write(1+1);
+        </script>
+
+하면 2가 나옴. 계산 기능도 있음!
+html은 정적이라 이런 기능을 쓸 수 없음.
+
+=============================================================================
+
+4. HTML과 JS의 만남 : 이벤트
+
+버튼을 넣고 싶으면 
+
+<input type="button" value="hi">
+이렇게 하면 됨.
+
+여기에 경고 메세지를 뜨게 하고 싶으면 alert라고 부름.
+
+구글에 JavaScripts alert 라고 검색하면 사용법 나옴.
+
+<input type="button" value="hi" onclick="alert('hi')">
+
+이렇게 사용하면 됨.
+
+html 설명서에는 onclick의 설명서에 내용으로는 반드시 js가 와야하고 
+웹브라우저는 그 js를 기억하고 있다가 해당하는 태그가 동작할때 
+작성한대로 실행한다고 함.
+
+이렇게 웹브라우저위에서 실행되는것들을 사건 영어로는 event라고 한다고함.
+
+어떤 이벤트가 실행됐을때 어떠한 JS를 실행하는것이 onclick라고 함.
+
+JS 그림1
+
+type를 텍스트로 주면 이렇게 됨. 
+
+JS 그림2
+
+<input type="text" onchange="alert('changed')">
+
+onclick는 클릭했을때 onchange는 내용이 바뀌었을때 이벤트가 실행.
+onchange는 내용이 바뀌고 마우스커서가 밖으로 이동되면 실행됨.
+
+이렇듯 웹사이트는 웹사이트 위에서 일어나는 어떤 행동들 10~20가지 들을 
+이벤트로 정의 해놓고 있고 이걸 이용해서 사용자와 상호작용 하는 웹페이지 웹사이트를 만들 수 있음.
+
+
+ex) 키 다운이 발생 됐을때이벤트가 발생되게 하고 싶다.
+
+구글에 javascripts onkeydown event attribute 라고 검색.
+해서 나온걸 응용 
+ex) <input type="text" onkeydown="myfunction()">
+이렇게 나와있다면 코드상에
+<input type="text" onkeydown="alert('key down')"
+이렇게 작성.
+
+이러면 저 텍스트바 안에서 keydown이 발생하면 경고문이 뜨는데 
+개인적으로는 키 다운이라길레 아래 키 누르면 발생되는줄 알았는데 그냥 아무키만 눌러도 
+keydown으로 간주를 함. 키누르는게 키 다운인듯.
+
+============================================================================================================
+
+5. html과 js의 만남(콘솔)
+
+마우스 우클릭 검사 -> console창에서 간단하게 자바스크립트 코드를 실행 할 수 있음.
+예를 들면 글자수를 숫자로 표시해주는 함수가 js에서 length인데 밑에 그림처럼 실행하면
+데이터 연산이 가능.
+
+js그림3
+
+이 콘솔에서 실행되는 js는 이 웹페이지에서 동작하는 자바스크립트로 실행 할 수 있음.
+
+마우스 우클릭 -> 검사 누르고 esc를 누르면 밑에 콘솔창이 생김. 다시 누르면 없어짐.
+
+한번 실행했던 코드는 위쪽 화살표를 누르면 다시 화면에 나타난다.
+
+우리가 코딩을 해서 얻을 수 있는 효용은 
+내가 개발자가 될 수 있다 없다 뿐만이 아니고 
+나의 현실의 문제를 해결하는 수 많은 단계의 심도들이 
+아날로그적으로 펼쳐져 있기 때문에 너무 큰 목적을 설정하는것보다는
+나의 현실의 문제를 가볍게 가볍게 해결하는 그런 방법을 잘 찾아보셨으면 좋겠고 
+그리고 이 console를 통해서 JS를 실행하면 지금보고있는 웹페이지를 기준으로 JS가 실행되는걸
+기억하면 됨.
+=====================================================================================================
+
+6. 데이터 타입- 문자열과 숫자 
+
+숫자(number) 타입 : 에서 제일 중요한건 연산.  
+1 하면 1이 출력 1+1 하면 2가 출력 
++ 더하기 - 빼기 * 곱하기 / 나누기 (나머지)
+
+문자열 : "" 으로 끝나거나 '' 로 끝나는것들 문자열에는 아주 유용한 기능들이 많다 
+
+문자열에는 여러가지 기능들이 많기 때문에 전부다 알려 줄 수 는 없고 
+구글에 javascripts string 라고 검색하면 모질라에서 운영하는 페이지 있음.
+강의에서 몇개 집어준거 
+
+'hello'.toUpperCase() =HELLO
+'hello'.indexOf('o') = 4 (지정한 문자열 위치 반환)
+'     hello     '.trim()  = 'hello' (공백 없애기)
+
+=================================================================================================
+
+7. 변수와 대입 연산자 
+
+= 는 대입 연산자
+
+x = 10 이면 이 오른쪽에 10을 왼쪽에 x에 대입을 한다는 뜻. x는 변수 
+근데 1=2  이렇게 하면 에러가 남.
+1에 2를 대입 할 수 없음. 1은 1일 뿐임. 이걸 상수라고 하고 변수를 variable 상수는 constant? 라고 부름.
+
+변수를 쓰면 좋은점은 
+
+"그냥 빠르게 휙 넘겨버려서 스샷을 제대로 못 찍었는데 레비토 일일 미션 항아리 보상으로 불길한 수정 상자가 생겨야 레비토 하는 자리에 레비토 안나와서 오잉 뭐지?? 했는데..."
+이런 문자열에 레비토 라는 글자가 중간 중간 막 드러가있는데 항상 문제점이 있다 가정할떈 극단적으로 생각하는 느낌으로가야함  레비토가 1억개 불규칙한 자리에 있는데
+이걸 전부 비틀즈로 바꿔야함 그러면
+
+var name="비틀즈"
+
+"그냥 빠르게 휙 넘겨버려서 스샷을 제대로 못 찍었는데 레비토 일일 미션 항아리 보상으로 불길한 수정 상자가 생겨야 레비토 하는 자리에 레비토 안나와서 오잉 뭐지?? 했는데..."
+
+var name ="비틀즈"
+alert("그냥 빠르게 휙 넘겨버려서 스샷을 제대로 못 찍었는데 "+name+" 일일 미션 항아리 보상으로 불길한 수정 상자가 생겨야 "+name+" 하는 자리에 "+name+" 안나와서 오잉 뭐지?? 했는데...")
+
+이렇게하면 효용성이 좋아짐. 1억개 전부를 바꾸지 않아도 변수 값만 바꾸면 되기 때문.
+
+변수를 쓰면 좋은 아주 많은 효용성중 한가지의 예시. 
+
+그리고 변수 앞에는 var을 항상 붙여주는게 좀 더 좋은 습관임.  var을 쓰는거의 장점과 단점에 대해 알기전엔 항상 var을 붙이는 습관을 들이자.
+var은 베리어블 의 약자임. 변수라는 뜻 
+
+variable 약자 
+
+
+===========================================================================================================
+
+8. 웹 브라우저 제어  & 9. css기초 style 속성  & 10. style 태그 & 11. 선택자
+
+
+css 복습의장인데
+
+<div>는 h1태그 마냥 화면 전체를 쓰기 때문에 줄 바꿈이되고 줄바꿈을 안하고 그 문자열? 이나 그걸 꾸며줄려면 
+span을 쓴다는걸 까먹고 있었는데 상기 하게 되었음.
+
+
+css는 style 태그안에 클래스나 id지정 가튼거.. 있고 
+.은 클래스를 가리키는거고 #은 아이디를 가리킴
+
+클래스는 그룹핑 한다는 뜻이고 아이디는 어떤 한가지 대상을 식별한다는 의미 
+예를 들면 1반 2반 3반 이런게 클래스고 
+학번이 ID임.
+
+클래스는 계속해서 코드에 등장해도 되지만 아이디는 한번 썼다면 지정하면 안됨.
+규약 위반임.
+
+ID가 더 우선순위가 높음.
+
+style 태그안에서 span의 글씨 색을 파란색으로 하고 싶은데 
+
+span{
+	color:blue;
+}
+
+이런식으로 해버리면 웹페이지의 모든 span이라는 뜻임.
+
+우선 순위
+
+1.id  2.클래스 3. 태그 
+
+================================================================================================================
+
+
+12. 제어할 태그 선택하기.
+
+이제 night버튼과 day버튼의 주간 야간 모드 구현을 그냥 복붙이 아닌 코드로 이해하면 
+   
+    <input type="button" value="night" onclick="
+        document.querySelector('body').style.backgroundColor='black';
+        document.querySelector('body').style.color='white';
+    ">    
+
+onclick의 내용으론 javascripts 의 내용이 body 태그의 내용을 바꿀거니까 구글에 
+
+javascripts select  tag by css selector이라고 치면 
+
+document.querySelector(selectors);나옴.
+
+이걸 토대로    
+
+ <input type="button" value="night" onclick="
+        document.querySelector('body').style.backgroundColor='black';
+        document.querySelector('body').style.color='white';
+    ">    
+을 완성.
+
+만약 태그 선택자가 아니고 아이디 선택자였다면
+
+<body id="1234">
+</body>
+
+이런거였다면     
+
+        document.querySelector('#1234').style.backgroundColor='black';
+        document.querySelector('#1234').style.color='white';
+
+이렇게 하면 됨. 
+
+JS그림 4
+
+
+이걸로 주간모드 야간모드 만들기 능력 갖춤.
+===========================================================================================
+
+13. 프로그램, 프로그래밍, 프로그래머 
+
+프로그래밍이란 뭔지 
+인간의 좀 더 편리해지고 싶은 욕망에 의해... 반복적인 일만 계속하는 불쌍사 방지 
+html은 뭔가 지정된 시간에 지정된 무언가가 실행되는 기능이 없어서 프로그래밍 언어라고 부르지 않고 
+자바스크립트는 그런 기능이 있고 프로그래밍 언어로 분류됨.
+조건문 함수 이런 기능들이 있음.  앞으로 알아볼 예정.
+
+=============================================================================================
+
+14. 조건문 예고 
+
+버튼이 두개인게 세련되지 않은거 같아서 버튼 하나로 day night가 동작되게하기 위해서
+조건문, 비교연산자, 불리언에 대해 다음 시간에 배울 예정
+
+=======================================================================================
+
+15. 비교 연산자와 불리언 
+
+1. ===
+
+document.write(1===1) 
+
+오른쪽에 있는 값과 왼쪽에 있는 값이 참이면 true반환 거짓이면 false반환
+
+2. +
+
+1+1 =2
+
+좌항에 1 우항에 1이 있고 두 값을 더해서 다른 값을 만듬. 비교 연산자.
+
+3. true false
+
+1===1 의 반환값은 true 아니면 false임. 이 true랑 false를 Boolean이라고 부름. 
+
+거의 무한하다고 볼 수 있는 스트링과 넘버와 달리 불리언은 true와 false 두개의 값으로 이루어져있음.
+
+
+4. 1<2
+
+1이 2보다 작냐인데 html은 <>이 문법에 들가기 때문에
+1&lt;2 이렇게 해야함.
+
+==================================================================================
+
+16. 조건문
+ 걍 다 아는 내용. 
+
+        <h2>IF-true</h2> 
+        <script>
+            document.write("1<br>");
+            if(true){
+            document.write("2<br>");
+            } else{
+            document.write("3<br>");
+            }
+            document.write("4<br>");
+        </script>
+        <h2>IF-false</h2> 
+        <script>
+            document.write("1<br>");
+            if(false){
+            document.write("2<br>");
+            } else{
+            document.write("3<br>");
+            }
+            document.write("4<br>");
+        </script>
+
+IF(조건) 이 참이면 첫괄호 실행 else 무시
+IF조건이 거짓이면 첫괄호 무시 else 실행
+
+======================================================================================
+
+17.  조건문의 활용
+위에서 본 조건문의 형식을 
+
+    <input type="button" value="night" onclick="
+        document.querySelector('body').style.backgroundColor='black';
+        document.querySelector('body').style.color='white';
+    ">    
+    <input type="button" value="day" onclick="
+        document.querySelector('body').style.backgroundColor='white';
+        document.querySelector('body').style.color='black';
+    ">
+
+여기다가 대입.
+
+
+    <input type="button" value="night" onclick="
+        if (night){
+        document.querySelector('body').style.backgroundColor='black';
+        document.querySelector('body').style.color='white';
+    ">    
+      }else{ 
+    <input type="button" value="day" onclick="
+        document.querySelector('body').style.backgroundColor='white';
+        document.querySelector('body').style.color='black';
+    "}>
+
+이렇게 형식을 넣고 조건문 완성 시켜야함.
+완성 시키기 위해서 input 태그에 id를 넣어주고 그리고 value 값을 추출 할 수 있게 구글링해서 코드를 알아냄.
+document.querySelector(id).value; 를 이용해서 조건문을 완성하면 된다. 
+
+javascripts element get value 라고 검색 후 나온 
+
+    <input id="night_day" type="button" value="night" onclick="
+        if (document.querySelector('#night_day'.value==='night'){
+        document.querySelector('body').style.backgroundColor='black';
+        document.querySelector('body').style.color='white';
+    ">    
+      }else{ 
+    <input type="button" value="day" onclick="
+        document.querySelector('body').style.backgroundColor='white';
+        document.querySelector('body').style.color='black';
+    "}>
+
+
+    <input id="night_day" type="button" value="night" onclick="
+        if (document.querySelector('#night_day'.value==='night'){
+        document.querySelector('body').style.backgroundColor='black';
+        document.querySelector('body').style.color='white';
+        document.querySelector('#night_day').valuer='day';
+    ">    
+      }else{ 
+    <input type="button" value="day" onclick="
+        document.querySelector('body').style.backgroundColor='white';
+        document.querySelector('body').style.color='black';
+        document.querySelector('#night_day').valuer='night';
+    "}>
+
+
+로 변경해서 수식 완성. 
+========================================================================================================
+
+18. 리팩토링 중복의 제거 
+
+코딩을 잘하는법은 중복을 끝 없이 없애는것
+대부분의 신기술은 코드에서 중복을 없애는것에 관련이 되어 있을 확률이 크다.
+
+    <input id="night_day" type="button" value="night" onclick="
+        if (document.querySelector('#night_day').value==='night'){
+            document.querySelector('#night_day').value='day';
+            document.querySelector('body').style.backgroundColor='black';
+            document.querySelector('body').style.color='white';
+        }else{
+            document.querySelector('#night_day').value='night';
+            document.querySelector('body').style.backgroundColor='white';
+            document.querySelector('body').style.color='black';
+        }">
+
+이 코드를 복사해서 다른곳에 붙여 넣으면 제대로 작동을 하지 않음.
+id는 단 한개만 구분하기 위한 그런거라서. 복사해서 다른곳에다가 붙여넣어서 위에 버튼이 하나가 있고 
+아래에도 버튼이 하나가 있다고 치고. 아래 버튼을 누르면 작동은 하지만 스위치에 이름이 바뀌지 않음.
+
+잘 관찰해보면 아래꺼를 눌러도 위에꺼의 이름이 바뀌고 있는걸 볼 수 있음.
+왜 그러냐면 night_day 라는 id는 단 하나 뿐이기 때문.
+
+그래서 두개를 복사해서 쓰면 제대로 작동 안함. 아래 있는 스위치의 아이디를 night_day2로 바꾸면 됨.
+작동이 잘됨.  
+
+     <input id="night_day" type="button" value="night" onclick="
+        if (document.querySelector('#night_day').value==='night'){
+            document.querySelector('#night_day').value='day';
+            document.querySelector('body').style.backgroundColor='black';
+            document.querySelector('body').style.color='white';
+        }else{
+            document.querySelector('#night_day').value='night';
+            document.querySelector('body').style.backgroundColor='white';
+            document.querySelector('body').style.color='black';
+        }">
+
+이 태그에서 onclick안에 부분은 온전히 input 태그에 귀속이 되어 있고 
+
+document.querySelector('#night_day').value==='night'
+document.querySelector('#night_day').value='day';
+document.querySelector('#night_day').value='night';
+
+사실상 자기 자신을 가르키는거나 마찬가지 즉 이부분들을 다 this 라는 키워드로 바꿔주면 됨.
+
+
+     <input id="night_day" type="button" value="night" onclick="
+        if (this.value==='night'){
+            this.value='day';
+            document.querySelector('body').style.backgroundColor='black';
+            document.querySelector('body').style.color='white';
+        }else{
+            this.value='night';
+            document.querySelector('body').style.backgroundColor='white';
+            document.querySelector('body').style.color='black';
+        }">
+
+
+this로 바꾸면 사실상 input에 대한 참조를 this로 해버리면 됨. 그래서 id는 쓰지 않아도됨. 
+이렇게되면 이 스위치를 몇개를 복사해도 제대로 잘 동작함.
+
+onclick 같은 이벤트안에서 이 이벤트가 속해있는 태그 자체를 가리키도록 약속된 키워드 그게 바로 this임.
+이렇게 코드가 간결해짐.
+
+    <input id="night_day" type="button" value="night" onclick="
+        if (this.value==='night'){
+            this.value='day';
+            document.querySelector('body').style.backgroundColor='black';
+            document.querySelector('body').style.color='white';
+        }else{
+            this.value='night';
+            document.querySelector('body').style.backgroundColor='white';
+            document.querySelector('body').style.color='black';
+        }">
+
+그럼 이제 보면 body가 4개인게 거슬림. 그럼 이렇게 하면 됨.
+
+var target = document.querySelector('body');
+그리고 이것과 똑같은 내용을 전부 target로 바꿔주면 됨.
+
+    <input id="night_day" type="button" value="night" onclick="
+        var tetget = document.querySelector('body');
+        if (this.value==='night'){
+            this.value='day';
+            target.style.backgroundColor='black';
+            target.style.color='white';
+        }else{
+            this.value='night';
+            target.style.backgroundColor='white';
+            target.style.color='black';
+        }">
+
+이렇게. 그럼 target를 쓰고 있는 모든건 target 이거 한줄만 바꿔주면 됨.
+
+=============================================================7.03==================================================================
+19. 반복문과 배열 - 그냥 개요 였음.
+20. 배열 
+
+대충 집에 옷이 넘 많으면 옷장사서 그안에 정리해두잖음.
+그 옷이 데이터고 옷장이 배열임.  
+즉 배열은 데이터의 수납공간이라 봐도 무방.
+
+
+20-1 배열 선언하는법
+
+ var coworkers = ["조이서","박새로워"];
+
+20-2 배열 값 출력 
+
+document.write(coworkers[0]);
+document.write(coworkers[1]);
+
+20-3 배열에 값 추가 하는법
+
+coworkers.push('장근수');
+coworkers.push('장근원');
+
+20-4 배열에 갯수 검색하는법
+document.write(coworkers.count);
+
+
+그외 기능들 concat, fill, join 등등이 있음.
+============================================================================================================================
+
+21. 반복문
+                    document.write('<li>1</li>');
+                    var i = 0;
+                        while(i < 3){
+                            document.write('<li>2</li>');
+                            document.write('<li>3</li>');
+                            i = i + 1;
+                        }
+                        document.write('<li>4</li>');     
+
+반복문은 while, for 등 여러가지가 있지만 여기선 while만 다룰거임.
+while의 ()안에는 불리언 값이 들어가는데 뭐 대충 조건이 참이면 트루 아님 펄스임.
+근데 와일안에 while(true) 라고 해버리면 무한히 반복되버리니 조건을 지정해서 false가 나오게 해서 반복문을 빠져 나오게 해야함.
+통념적으로 변수 i를 지정해서 그 역할을 하게 만듬.
+
+==============================================================================================================================
+
+22. 배열과 반복문 
+
+        <h1>Loop & Array</h1>
+        <script>
+            var leetaeoneclass = ['박새로워','조이서','장근수','오수아'];
+        </script>
+        <h2>2태원클났어</h2>
+        <ul>
+            <script>
+                var i = 0;
+                while(i < leetaeoneclass.length){
+                    document.write('<li>' + leetaeoneclass[i] + '</li>');
+                    i = i + 1;
+                }
+            </script>
+
+이렇게 하면 배열의 숫자가 아무리 늘어나도 i의 숫자를 일일이 바꿔줄 필요가 없음.
+
+만약 링크를 넣고 싶다면 
+
+                var i = 0;
+                while(i < leetaeoneclass.length){
+                    document.write('<li><a href="http://a.com/'+leetaeoneclass[i]+'">' + leetaeoneclass[i] + '</a></li>');
+                    i = i + 1;
+                }
+
+이렇게 a태그를 삽입해주는 센스를...  이렇게 하면 홈페이지 링크 뒤에 지정한 이름이 오게 하기 쌉가능.
+배열이라는건 순서대로 연관된 데이터를 잘 정리하는것이고 반복문은 순서대로 배열에 담긴 데이터를 하나씩 꺼내서 
+자동화된 처리를 할 수 있는 문법 이기 때문에 이 두개의 기능은 환상의 꿍짝임.
+"" 안에서 배열을 연결 해줘야 할땐 문법적으로 ''로 다시 구분 해주는듯.
+
+===============================================================================================================================
+
+23. 배열과 반복문의 활용 
+어이가 없지만  오타가 너무 많아서 코드가 안돌아갔음.
+
+var i = 0;
+while(1 < link.lenth)}
+    블라 블라 
+}
+
+이랬었는데 1은 i로 바꾸고 link.lenth도 link.length 로;;;
+
+아무튼 안보고 일단 성공;;
+
+그리고 document.querySelector('a') 이런식으로 써버리면 맨앞에 있는 a태그 하나만 가지고옴.
+그럼 전부 가져오려면 뭐가 필요할까 이럴때 검색 고고 
+
+javascript get element by css selector multiple 검색.
+스택오버플로에 누군가가 document.querySelectorAll('element') 라고 올려둠. ㅇㅎ 그렇군 하고 
+javascript querySelectorAll 한번 검색 ㄱㄱ
+그리고 사용. 
+
+================================================================================================================================================
+
+24. 함수 예고 
+input 태그안에 color을 바꿔야하는데 만약 1억개가 있다면 꽤 절망적이다...
+이럴떄 우릴 구원해주는게 함수. 
+
+자바스크립트로 작성된 코드들 onclick="" 안의 "" 코드들을 head로 옮겨서 
+script 태그로 묶어주고 거기서 함수 이름을 정해서 이것들을 묶어주면 대충 이런 형태
+
+    <script>
+        function nightDayHandler(self){
+            var target = document.querySelector('body');
+            if (self.value==='night'){
+                self.value='day';
+                target.style.backgroundColor='black';
+                target.style.color='white';
+
+                var i = 0;
+                var link = document.querySelectorAll('a');
+                while(i < link.length)
+                {
+                    link[i].style.color='powderblue';
+                    i = i + 1;
+                }
+            }   else{
+                    self.value='night';
+                    target.style.backgroundColor='white';
+                    target.style.color='black';
+
+                    var i = 0;
+                    var link = document.querySelectorAll('a');
+                    while(i < link.length)
+                    {
+                        link[i].style.color='blue';
+                        i =  i + 1;
+                    }
+                }
+        }
+    </script>
+
+그리고 이걸 함수로 선언하겠다 라는건 function으로 선언해주면 됨.
+this 는 다 self로 바꿔주는데 이건 나중에 알려줌.
+그리고 밑에 onclick 부분은 이렇게.
+
+    <input id="night_day" type="button" value="night" onclick="
+             nightDayHandler(this); 
+        ">
+
+왜 저 안에 this 가 들어가는지도 나중에.  아무튼 이렇게 하면 위에 있는걸 
+한줄로 불러오는거고 저 인풋이 1억개면 그냥 함수 내용만 바꾸면 1억개가 바뀌는 효율.
+그리고 같은 함수 이름이라면 같은 로직일것이고 함수 이름을 보고 첨보는것도 대충 무슨 기능인지 알 수 있음.
+
+======================================================================================================================
+
+07.04 
+
+25. 함수
+
+함수의 기본 문법, 파라미터와 아규먼트를 배우고 리턴을 배우면 함수 목차는 끝남.
+
+document.write('<li>1</li>');
+document.write('<li>2-1</li>');
+document.write('<li>2-2</li>');
+document.write('<li>3</li>');
+
+여기서 만약
+
+document.write('<li>1</li>');
+document.write('<li>2-1</li>');
+document.write('<li>2-2</li>');
+document.write('<li>3</li>');
+document.write('<li>1</li>');
+document.write('<li>2-1</li>');
+ document.write('<li>2-2</li>');
+document.write('<li>3</li>');
+
+이렇게 반복해야 하면 보통은 반복문을 사용할텐데
+쓸 수 없는 경우가 분명히 있음. 연속 적이지 않게 반복해서 
+나타나야 한다면의 이야기.
+
+
+이럴떄는 
+function two(){
+    document.write('<li>1</li>');
+    document.write('<li>2-1</li>');
+    document.write('<li>2-2</li>');
+    document.write('<li>3</li>');
+}
+two();
+two(); 
+
+이렇게 하면 해결 
+
+함수의 기본 문법 배움.
+
+26. 함수의 매개변수와 인자                 
+
+자판기에서 뭘 먹고 싶어서 제품을 누르면 입력
+자판기가 그 입력에 대해 해당되는 제품을 제공하는것은
+출력이라고 볼 수 있음. 세상에 많은것들은 입력과 출력으로 이루어져 있음.
+수학적으로 함수라고 함.
+
+함수는 입력과 출력으로 이루어져 있는데 입력에 해당하는게 
+파라미터 한국어로 인자 출력은 리턴
+
+function sum(left,right){
+    document.write(left+right+'<br>');
+    }
+sum(2,3);
+sum(3,4);
+
+여기서 sum(3,4)의 안에 있는 것들을 인자(argument)라고 부르고
+그리고 이값을 받아서 함수안으로 매개해주는 변수 function sum(left,right)
+의 left right를 매개변수 파라미터(parameter)라고 부름.
+
+===========================================================================================
+
+27. 함수(리턴)
+
+표현식이란 무엇인가?
+
+콘솔창에 1+1을 치면 2가 나옴.
+1+1은 2의 표현식임..
+
+function sum(left,right){
+    document.write(left+right+'<br>');
+    }
+이 함수는 파라미터를 더하고
+2-1을 치면 1이 나옴 2-1이 1의 표현식임.
+1===1 좌항과 우항을 비교 했을때 값이 같으면 
+true 즉 1===1은 true에 대한 표현식이 됨.
+
+그렇다면 sum(2,3)이라고 했을때 이 결과가 5의 표현식이 되게 하고 싶은데
+이걸 위해서 return 이 필요함 줄바꿈도 해주는 많은 기능을 함.
+근데 여기다가 글자색도 빨간색으로 바꾸고 싶어진다면.
+
+function sum_red(left,right){
+    document.write('<div style="color:red">'+left+right+'</div><br>');
+    }
+
+이렇게 바꿔줘야함.  더 다양하게 사용된다면 많은 함수를 만들어야 한다는뜻
+
+강의 내용중
+
+function sumColorRed(left,right){
+    document.write('<div style="color:red">'+left+right+'</div><br>');
+}
+함수를 실행했을때 5가 아니고 빨간색 23이 나왔는데 
+JS에는 srting + number = string라는 규칙이 있다고함.  그리고 같은 연산 순위이면 왼쪽부터
+원칙이 있음.
+
+'<div style="color:red">'+left+right+'</div><br>'은
+
+string + number + number + string이고 같은 + 연산순위여서 왼쪽부터 법칙에 의해
+((string+number)+number)+string 순서로 연산이 됨.
+
+즉 '<div~>'+2 는 숫자 + 문자열이라 결과가 문자 즉 '<div~>'2 가됨.
+'<div~>2'+3  역시 문자열 + 숫자기 때문에 결과가 문자열
+'<div~>23+</div>여서 
+출력이 23이 되는것.
+
+그렇기 때문에 그냥 return을 사용해서 
+
+<script>
+     function sum2(left,right){
+        return left+right;
+    }
+    document.write(sum2(2,3)+'<br>');
+    document.write('<div style="color:red;">'+sum2(2,3)+'</div>');
+    document.write('<div style="font-size:3rem;">'+sum2(2,3)+'</div>');
+</script>
+
+이렇게 처리하는게 좋음. return이 없다면 함수안에서 다른 기능을 하게 일일이 함수를 만들어줘야하는데
+리턴으로 결과값을 묶은후 기호에 따라 따로 처리가 가능함. (폰트크기라던가 글자색이라던가 하는)
+=======================================================================================================
+
+28. 함수의 활용
+내용은 같으나 코드를 효율적으로 바꾸는걸 리팩토링이라고 한다고함.
+리팩토링에서 함수는 매우 중요한 역할.
+위 내용을 활용해서 
+<script>
+        function nightDayHandler(self){
+            var target = document.querySelector('body');
+            if (self.value==='night'){
+                self.value='day';
+                target.style.backgroundColor='black';
+                target.style.color='white';
+
+                var i = 0;
+                var link = document.querySelectorAll('a');
+                while(i < link.length)
+                {
+                    link[i].style.color='powderblue';
+                    i = i + 1;
+                }
+            }   else{
+                    self.value='night';
+                    target.style.backgroundColor='white';
+                    target.style.color='black';
+
+                    var i = 0;
+                    var link = document.querySelectorAll('a');
+                    while(i < link.length)
+                    {
+                        link[i].style.color='blue';
+                        i =  i + 1;
+                    }
+                }
+        }
+        
+    </script>
+
+    <input id="night_day" type="button" value="night" onclick=" nightDayHandler(this)
+    ">
+       
+을 만들어냄.  온클릭안에 만든걸 복붙해서 head 태그쪽으로 옮기고 함수로 지정.
+근데 그렇게 되면 this는 더이상 input태그 를 가르키지 않음. 그래서 이걸 매개변수로 해줘야해서 
+nightDayHandler안에 인자로 this를 주고 파라미터를 self로 받아서 활용하는 식으로 해결함.
+개씹 꿀팁 
+
+컨트롤 + D를 누르고 변수 이름을 누르면 중복된 이름이 전부 다 선택이되서 함께 수정 가능.
+
+==========================================================================================================
+
+7월 5일
+29. 객체예고 
+객체는 진짜 다면적인면이 있지만 이 강의에선 정리정돈의 면모를 강조할 예정
+코드가 많아지면 코드를 정리정돈하기 위해 함수를 씀.
+함수가 많아지면 함수와 연관된 변수들이 엄청나게 많아지면 
+역시나 복잡도의 한계에 도달하게 됨.
+
+서로 연관된 함수와 연관된 변수를 같은 이름으로 그룹핑해서 
+잘 정리 정돈하기 위한 도구 그것을 일단 객체라고 말하고 싶음.
+
+
+중복을 제거하기 위해서 중복된 코드를 묶어서 함수화를 함.
+근데 a태그의 색을 모두 바꾸는 setcColor 함수를 만들고 웹페이지의 백그라운드 컬러가 검은색이면
+폰트를 흰색으로 반대로 흰색이면 검은색으로 바꾸는 이것도 함수화 하려고 setColor 함수로 만들면 
+함수 이름이 중복되어 버림.
+
+
+function setColor(color){
+    var i = 0;
+  var link = document.querySelectorAll('a');
+        while(i < link.length)
+        {
+            link[i].style.color=color;
+            i = i + 1;
+        }
+}
+
+이건 a태그의 칼라 체인지
+
+function setColor(color){
+  var i = 0;
+  var link = document.querySelectorAll('a');
+        while(i < link.length)
+        {
+            link[i].style.color=color;
+            i = i + 1;
+        }
+}
+
+function setColor(color){
+    var target = document.querySelector('body');
+    target.style.color='color';
+}
+
+이렇게 함수 이름이 같아져버리면 새로 선언된거에 의해 전에 있는게 삭제 되어버리는거차 마찬가지인 결과가 초래됨.
+아주 아주 긴 코드에서는 이런걸 못 찾아낼떄가 많음. 그것도 모르고 같은 이름으로 코드를 만들었다가 
+아주 아주 중요한 시스템에서 이름이 중복이되서  덮어씌워져서 기능이 동작을 안하게 되면 그건 매우 심각한 일.
+한줄짜리 기능을 함수화 하는게 뭐가 효율적이겠냐면은, 늘 그렇듯이 1억개가 있다고 가정하면... 가치가 있는일.  아무튼 싹 다 정리해서
+
+        function BodySetColor(color){
+            document.querySelector('body').style.color=color;
+        }
+
+        function BodySetBackgroundColor(color){
+            document.querySelector('body').style.backgroundColor=color;
+        }
+
+        function LinksSetColor(color){
+            var i = 0;
+                var link = document.querySelectorAll('a');
+                while(i < link.length)
+                {
+                    link[i].style.color=color;
+                    i = i + 1;
+                }
+        }
+        function nightDayHandler(self){
+            if (self.value==='night'){
+                self.value='day';
+                BodySetBackgroundColor('black')
+                BodySetColor('white');
+                LinksSetColor('powderblue');
+
+            }   else{
+                    self.value='night';
+                    BodySetBackgroundColor('white')
+                    BodySetColor('black');
+                    LinksSetColor('blue');
+                }
+        }
+
+이런 느낌으로 바꿔버리고... 이게 객체를 도입해볼건데 컴터에 파일이 많아지면
+폴더를 만들어서 그안에 정리를 하는데 객체를 이 폴더라고 봐도 무방함.
+
+document.querySelector('body').style.color=color;
+
+자세히 보면 documet는 객체라는걸 알 수 있고 querySelector는 document에 속해있는 함수라는걸 알 수 있음.
+객체에 속해있는 함수는 함수라고 부르지 않고 메소드(method)라고 부름.
+함수 호출할떄 넣는 값 아규먼트(매개변수), 함수가 요구하는거 파라미터(인자), 그리고 리턴값은 반환되는 값이고 객체에 속해있는
+함수를 메소드라고 부름. 
+
+
+==============================================================================================================================================================
+
+30. 객체의 쓰기와 읽기
+
+정보를 정리 정돈 할때 쓰는거 배열.
+배열은 순서에 따라서 정보를 정리정돈 한다는 특징이 있었음.
+
+<script>
+    var leeateoneClass = {
+        "hero" : "박새로이",
+        "villain" : "장대희"
+       };
+    // 배열은 대괄호 객체는 중괄호
+     document.write("hero : "+leeateoneClass.hero);
+</script>
+
+객체는 배열과 비슷하지만 배열은 []로 묶고 객체는 {}로 묶음.
+그리고 객체는 키랑 벨류임.
+객체를 꺼내올때는 객체이름.키 이렇게 불러오면 되는데
+.은 객체에 접근한다는뜻임.
+
+leeateoneClass["data scientist"]="taeho";
+document.write("data scientist : "+leeateoneClass["data scientist"]+"<br>");
+만약 이름에 띄어쓰기가 있거나 data 뭐 이런식으로 이미 프로그래밍에 있는
+그런 이름이라서 쓰기 곤란하면 이런식으로 배열을 응용해서 하면되고 
+이렇게 선언한거는 .으로 접근 안되고 대괄호로 접근해야함.
+
+=======================================================================================================================================================
+
+31. 객체와 반복문
+생성된 객체에 어떤 데이터가 있는지 알아야 하는 경우가 있음.
+이럴떈 배열에선 반복문을 썼음. 객체에선 어떻게 해야하냐면
+구글에 javascript object iterate 검색.
+
+for(var key in objectname){
+    console.log(key,objectname);
+}
+
+
+이렇게 나와있는데 저 오브젝트안에서 키 값들을 가져오는 반복문.
+
+배열에선 순서대로 정렬이 되어 있어서 인덱스라고 불렸지만
+객체는 아니기 때문에 key라고 불리움.
+
+<script>
+    for(var key in leeateoneClass){
+        document.write(key+': ',leeateoneClass[key]+'<br>');
+    }
+</script>
+
+이렇게 하면 객체에 있는 데이터를 전부 불러올 수 있음.
+객체[키] 이렇게 하면 value값이 다 나오기 때문.
+
+======================================================================================================================================
+
+32. 객체의 프로퍼티와 메소드
+
+객체에 문자열을 넣었지만 사실 객체엔 숫자도 넣고 여러가지 넣을 수 있음.
+이를테면 함수도 넣을 수 있음.
+
+leeateoneClass.showAll = function(){
+    
+}
+
+이렇게 하면 되는데 
+
+function showAll(){
+
+}
+
+이거랑 사실상 같은거임.
+
+leeateoneClass.showAll = function(){
+    for(var key in leeateoneClass){
+        document.write(key+': ',leeateoneClass[key]+'<br>');
+    }
+}   
+
+이렇게하고 결과를 호출하면 
+
+JS그림 5
+
+처럼 됨.
+
+근데 저건 좋은 방법이 아님. 객체의 이름이 만약 바뀐다면 
+document.write(key+': ',leeateoneClass[key]+'<br>');
+이부분에서 오류가 날 것이기 때문에...
+
+leeateoneClass.showAll = function(){
+    for(var key in this){
+        document.write(key+': ',this[key]+'<br>');
+    }
+}   
+
+이 함수가 소속 되어있는 객체를 가리키는 this라는 키워드를 사용하면 됨.
+객체에 소속된 함수를 메소드 
+객체에 소속된 변수를 프로퍼티라고 부름.  이를테면 key값들이 변수고 그걸 프로퍼티라고 부름.
+
+=============================================================================================================================================
+
+
+33. 객체의 활용
+
+위에서 배운것들을 토대로 
+
+function BodySetColor(color){
+            document.querySelector('body').style.color=color;
+        }
+
+        function BodySetBackgroundColor(color){
+            document.querySelector('body').style.backgroundColor=color;
+        }
+
+        function LinksSetColor(color){
+            var i = 0;
+                var link = document.querySelectorAll('a');
+                while(i < link.length)
+                {
+                    link[i].style.color=color;
+                    i = i + 1;
+                }
+        }
+        function nightDayHandler(self){
+            if (self.value==='night'){
+                self.value='day';
+                BodySetBackgroundColor('black')
+                BodySetColor('white');
+                LinksSetColor('powderblue');
+
+            }   else{
+                    self.value='night';
+                    BodySetBackgroundColor('white')
+                    BodySetColor('black');
+                    LinksSetColor('blue');
+                }
+        }
+
+을
+
+var Body = {
+    setColor:function(color){
+            document.querySelector('body').style.color=color;
+        },
+
+    setBackgroundColor:function(color){
+            document.querySelector('body').style.backgroundColor=color;
+        }
+}
+
+var Links = {
+    setColor:function(color){
+            var i = 0;
+                var link = document.querySelectorAll('a');
+                while(i < link.length)
+                {
+                    link[i].style.color=color;
+                    i = i + 1;
+                }
+        }
+}
+
+ function nightDayHandler(self){
+     if (self.value==='night'){
+         self.value='day';
+          BodySetBackgroundColor('black')
+          BodySetColor('white');
+        LinksSetColor('powderblue');
+
+     }   else{
+             self.value='night';
+                    BodySetBackgroundColor('white')
+             BodySetColor('black');
+              LinksSetColor('blue');
+         }
+}
+
+nightDayHandler(this);
+Body.setColor('아무개');
+Body.BodySetBackgroundColor('아무개');
+Links.setColor('아무개');  이렇게 정리해버리면 됨.
+
+========================================================================================================================================================
+
+34. 파일로 쪼개서 정리정돈하기
+서로 연관된 코드들을 파일로 묶어서 그룹핑 하는것.
+
+var Body = {
+    setColor : function(color){
+        document.querySelector('body').style.color=color;
+    },
+    setBackgroundColor: function(color){
+        document.querySelector('body').style.backgroundColor=color;
+    }
+}
+
+var Links ={
+    setColor:function(color){
+        var i = 0;
+            var link = document.querySelectorAll('a');
+            while(i < link.length)
+            {
+                link[i].style.color=color;
+                i = i + 1;
+            }
+    }
+}
+
+function LinksSetColor(color){
+    var i = 0;
+        var link = document.querySelectorAll('a');
+        while(i < link.length)
+        {
+            link[i].style.color=color;
+            i = i + 1;
+        }
+}
+function nightDayHandler(self){
+    if (self.value==='night'){
+        self.value='day';
+        Body.setBackgroundColor('black')
+        Body.setColor('white');
+        Links.setColor('powderblue');
+
+    }   else{
+            self.value='night';
+            Body.setBackgroundColor('white')
+            Body.setColor('black');
+            LinksSetColor('blue');
+        }
+}
+
+모든 중복되는 코드들을 colors.js로 저장해서 
+
+<script src="colors.js"></script>
+해주면 코드도 깔끔해지고 웹서버 측면에서는 홈피와 js파일 두번 로드 해야하지만 캐시 때문에 한번 받아지면 다시 다운 할 필요 없어서 
+효율적이게되고 좋음. 
+
+==========================================================================================================================================
+7.9
+
+35. 라이브러리와 프레임워크
+
+소프트웨어를 혼자 만드는 일은 없다.
+이미 누군가 만든 소프트웨어 위에서 동작하는 소프트웨어를 만들기 떄문
+이를테면 웹브라우저
+
+다른 사람이 이미 잘 만들어 놓은 것을 부품으로 해서 
+내가 만들고자 하는 것을 빠르게 조힙해서 만들어 가는 것이 
+그것이 오늘날 소프트웨어를 만드는 기본중의 기본.
+
+지금까지는 생산자가 되는 방법을 봤고 
+지금부터는 다른 사람이 만든 소프트웨어를 부품으로 해서 
+내가 만드는 소프트웨어의 생산자가 되는법을 알아보자.
+
+이때 알아두면 좋은게 바로 라이버러리와 프레임워크
+두가지는 비슷함
+
+다른사람의 도움을 받아서 소프트웨어를 만든다는점에서 비슷함.
+
+라이브러리는 내가 만들고자하는 프로그램에 필요한 부품이 되는
+소프트웨어를 잘 정리정돈 해놓은, 재사용하기 쉽도록 되어 있는 소프트웨어를
+라이브러리라고 함.  내가 만들고있는 프로그램에 사용할 부품을 가져오는 느낌.
+
+프레임워크는 만들고자 하는것이 있을때 만들고자 하는것이 무엇이냐에 따라서 
+예를들면 게임이냐 웹이냐 채팅이냐.... 그것을 만들려고 할때 언제나 필요한 공통점이 있고 
+만들고자 하는것에 대한 기획 의도에 따라서 달라지는 부분이 있음.
+
+그중에서 공통적인 부분은 프레임워크라는것이 만들어놓고 
+우리는 만들고자하는것에 기능에따라 또는 개성에따라서 달라지는 부분만
+살짝 살짝 수정하는걸 통해서 우리가 만들고자 하는것을 처음부터 끝까지 
+만들게 하지않게 해주는 반제품 같은 느낌.
+
+라이브러리가 됐건 프레임워크가 됐던 다른사람과 협력하는 모델임.
+
+JS에서 가장 유명한 라이브러리는 jQuery라는 라이브러리임.
+이걸 사용하면 직접 코딩했던거 보다 생산성이 훨씬 더 높아짐.
+
+그렇다고 지금껏 배운게 쓸모 없는게 아니고
+지금껏 배운게 있어야 jquery 를 잘 다룰 수 있고 
+또 지금껏 하면서 안되는 부분에서 절망감을 느껴본적이 있어야 
+jquery를 만나는게 즐거워짐.
+
+
+각설하고 구글에 jquery를 검색하면 파이썬처럼 정식 사이트가 존재함.
+들어가서 다운로드 항목에서 바로 다운 받는 방법이 있고 CDN을 통해서 그냥 
+src로 사용하는 방법이 있음.
+
+google CDN을 눌러보면 3.x버전이나 최신 버전이 있을텐데 복붙해서 사용하면됨.
+jquery는 엄청난 편의성을 제공함.
+
+<script src ="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+이렇게 복붙하면 됨.
+
+예를 들면 반복문을 사용해서 처리해야하는 부분.
+
+ex)
+var Links ={
+    setColor:function(color){
+        // var i = 0;
+        //     var link = document.querySelectorAll('a');
+        //     while(i < link.length)
+        //     {
+        //         link[i].style.color=color;
+        //         i = i + 1;
+        //     }
+
+가 있다면 jquery는
+
+$('a');
+
+$는 함수 이름. $함수를 쓰겠다는거고 'a'는 a태그를 전부 제어하겠다는 의미.
+jquery로 css를 제어 할려면 jquery css라고 검색하면 api문서가 나옴.
+보면 
+
+var Links ={
+    setColor:function(color){
+    $('a').css('color',color);
+    }
+}
+
+이런식으로 사용 할 수 있음.  저위에 반복문보다 직관적임.
+
+오해하지 말아야하는건 jquery는 새로운 언어가 아니고 우리대신에 css라는 함수를 jquery라는 라이브러리로 만들어둔거임.
+즉 js로 만들어졌다는것. 즉 css함수를 이용한다면 내부적으로는
+
+        // var i = 0;
+        //     var link = document.querySelectorAll('a');
+        //     while(i < link.length)
+        //     {
+        //         link[i].style.color=color;
+        //         i = i + 1;
+        //     }
+
+이런 기능이 구현되있는거라 알면 됨.
+
+자바스크립트는 가장 빠르게 발전하고 있는 언어이고 웹의 중요성이 있어서 
+수 많은 라이브러리들이 쏟아지고 있음.
+
+다른 사람이 정리정돈 한 것을 내 코드로 가져오는데 중요한 역할을 하는건 파일로 코드를 잘 정리정돈 하는것.
+자바스크립트 커뮤니티에서 가장 중요한 라이브러리중 하나인 jquery를 사용하는 가장 중요한 방법도 알아보았음.
+
+
+예를들어 집을 만든다고 하면, 라이브러리는 자재랑 가구등 집에 필요한 재료이고
+프레임워크는 이미 집의 수도나 뼈대같은 기본적인 구조들이 있어서, 입맛대로 꾸미기만 하면 되는것.
+이랑 비슷한 비유라고 함.
+
+
+
+=====================================================================================================================================================
+
+
+36. UI vs API
+UI는 User Interface의 약자 
+API는 Application Programming Interface의 약자 
+
+JS그림6
+
+이 단추는 UI임. 저 버튼을 통해서 유저가 우리가 만든 웹어플을 쓰기 때문
+단추를 눌렀을때 경고창이 뜨는건 그럼 누가 만든것인가?
+우리가 만든것이기도 하고 아니기도함.
+저 메세지가 뜨는 타이밍이나 메세지는 우리가 지정했지만
+경고창의 기능이나 모양 이런건 일체 설명 되어있지 않음.
+
+왜냐하면 저 경고창은 웹브라우저를 만든 사람들이 쓰라고 만들어둔 기능을
+JS문법에 맞춰서 우리가 alert함수를 호출해서 불러내는것이기 떄문.
+
+애플리케이션을 만들기 위해서 프로그래밍을 할때 사용하는 조작 장치들을
+Application Programming Interface(API)라고 부름.
+그림의 alert 함수가 바로 API인것.
+
+JS뿐 아니고 모든 프로그래밍 언어에 공통적으로 적용되는 얘기
+모든 애플리케이션들은 API를 프로그래밍적으로 즉 순서대로 실행하는것을 통해 
+만들어짐. API가 없다면 순서가 무슨 소용이고 순서가 없다면 API가 무슨 소용인지
+API와 순서는 단어와 문법처럼 기계와 부품처럼 떌래야 뗼 수 없는 관계
+
+코딩을 하기전엔 평생 UI만 썼겠지만 우리는 이제 
+API도 사용하는 프로그래머가 된 것.
+
+우리는 자바스크립트라는 접착제로 본드로 
+API들을 결합해서 응용해서 세상에 어디에도 존재하지 않는
+프로그램을 만들고 있는것 
+
+UI는 사용자가 시스템을 조작하기 위해 사용 할 수 있는 화면에 보이는 장치
+API는 그 UI가 UI로써 동작하기 위해서 어떤 프로그램이 그 프로그램으로서 동작하기 위해서
+만들어진데 이용된 부품 , 기능, 프로그램이다.
+
+UI는 사용자가 시스템을 제어하기 위해 조작하는 장치
+그 장치들을 만들려면 API를 가져와서 만들 수 있지비
+
+
+
+===============================================================================================================
+
+이제 필요한건 공부보다 실습 실습보단 자신의 프로젝트
+공부에는 때가 없지만 프로젝트에는 때가 있음.
+그 시기는 바로 지금이고 
+
+공부를 많이하고 플젝을 시작 할 수록 자신의 코드를 긍정하기 어려워짐.
+조언을 하자면 모든 도구를 이용하려 하지말고 
+최소한의 도구로 해결하려고 해봤으면 좋겠음.
+
+최소한으로는 무슨 뜻이냐면 순서에 따라서 실행되어야 하는 명령들이 실행 되도록 하는것.
+객체는 말 할 것도 없고 함수도 조건문도 반복문도 필요하지 않다.
+
+순서대로 실행된다는 것만으로도 프로그래밍은 충분히 혁명적이다.
+그러다보면 그것만으로는 도저히 해결 할 수 없는 순간이 노는데 
+그때 주의 깊게 반복문, 조건문, 함수 , 객체를 신중하게 도입하면서 
+각각의 개념들간의 관계에 익숙해지다보면 마침내 유창해짐.
+
+그때 또 다시 한계가 오는데 그때가 실습을 멈추고 공부를 다시 시작할때
+그때가 언제가 될지는 모르겠지만 
+앞으로 그걸 뚫을 검색어를 추천하고 끝내겠음.
+
+웹 페이지에 있는 어떤 태그를 사제하고 싶거나 자식 객체를 추가하고 싶다면
+document 객체를 좀 더 자세히 살펴보자. 여러분이 필요한 메소드가 그안에 있을것.
+
+그걸 통해서도 찾을 수 없다면 DOM 객체로 수색범위를 넓혀보자
+웹 페이지가 아니고 웹브라우저 자체를 제저해야한다면 window 객체를 살펴보자
+현재 웹페이지 주소를 알아야 하거나 새창을 열어야 하거나 화면 크기를 JS를 통해서 알아야 한다면
+윈도우 객체에 있는 메소드나 프로퍼티가 도울 수 있다.
+
+또 웹페이지를 리로드하지 않고 정보를 변경하고 싶다면
+ajax가 필요할 것.
+
+웹페이지가 리로드 되어도 현상태를 유지하고 싶다면 cookie 배우자.
+쿠키와 함께라면 사용자를 위한 개인화된 서비스를 제공 할 수 있음.
+
+인터넷이 끊겨도 작동하는 웹페이지를 만들고 싶다면 
+offline web Application을 찾아보기.
+
+화상통신 웹앱을 만들고 싶다면
+webRTC
+
+사용자의 음성을 인식하고 음성으로 정보를 전달하고 싶다면
+speech로 시작하는 API 를 찾아보기.
+
+3차원 그래픽으로 게임과 같은것을 만들고 싶다면 webGL을 찾아보기
+가상현실에 관심이 많다면 webVR을 찾아보기
+
+수고람지.

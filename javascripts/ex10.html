@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <h1>Object</h1>
+        <h2>creater</h2>
+        <script>
+            var leeateoneClass = {
+                "hero" : "박새로이",
+                "villain" : "장대희"
+            };
+            // 배열은 대괄호 객체는 중괄호
+            document.write("hero : "+leeateoneClass.hero+"<br>");
+            document.write("villain : "+leeateoneClass.villain+"<br>");
+            leeateoneClass.heroine = "조이서";
+            document.write("heroine : "+leeateoneClass.heroine+"<br>");
+            leeateoneClass["data scientist"]="taeho";
+            document.write("data scientist : "+leeateoneClass["data scientist"]+"<br>");
+        </script>
+        <h2>iterate</h2>
+        <script>
+            for(var key in leeateoneClass){
+                document.write(key+': ',leeateoneClass[key]+'<br>');
+            }
+        </script>
+        <h2>property & Method</h2>
+        <script>
+            leeateoneClass.showAll = function(){
+                for(var key in this){
+                    document.write(key+': ',this[key]+'<br>');
+                }
+            }
+            leeateoneClass.showAll();
+        </script>
+    </body>
+</html>
